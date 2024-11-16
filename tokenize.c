@@ -204,6 +204,7 @@ static int read_punct(const char *p) {
   case '{':
   case '}':
   case '~':
+  case '\\':
     return 1;
   }
   return 0;
