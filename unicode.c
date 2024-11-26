@@ -367,7 +367,7 @@ bool is_ident2_non_ascii(uint32_t c) {
     {0xE0100, 0xE01EF}
   };
 
-  return is_ident1(c) ||  in_range(c, range, sizeof(range) / sizeof(UTF32Range));
+  return is_ident1(c) || in_range(c, range, sizeof(range) / sizeof(UTF32Range));
 }
 
 // Returns the number of columns needed to display a given
