@@ -424,13 +424,13 @@ static Token *new_pp_number(char *start, char *p) {
       p += 2;
       continue;
     }
-    if (Isalnum(*p) || *p == '_' || *p == '$') {
+    if (is_ident2_ascii(*p)) {
       p++;
       continue;
     }
     if ((unsigned char)*p >= 128) {
       char *pos;
-      if (is_ident2(decode_utf8(&pos, p))) {
+      if (is_ident2_non_ascii(decode_utf8(&pos, p))) {
         p = pos;
         continue;
       }
